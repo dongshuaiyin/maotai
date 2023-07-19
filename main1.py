@@ -19,8 +19,8 @@ COOKIE_EXPIRED_FILE = 'cookie_expired_time.pkl'
 
 config = {
     'targetUrl': 'https://cart.taobao.com/cart.htm?from=btop', # 购物车地址
-    'targetTime': '2023-07-18 20:00:00', # 抢购时间
-    'maxRetry': 10, # 没抢到时的最大重试次数
+    'targetTime': '2023-07-18 09:07:00', # 抢购时间
+    'maxRetry': 5, # 没抢到时的最大重试次数
     'leadTime': 1000, # 提前多少毫秒开始抢购
 }
 
@@ -82,11 +82,11 @@ def main():
     login()
 
     wd.get(config['targetUrl'])
-    
-    scheduler()
 
-    if IS_DEBUG:
-        wd.quit()
+    scheduler()
+    #
+    # if IS_DEBUG:
+    #     wd.quit()
 
 
 
